@@ -1,0 +1,707 @@
+:root {
+    --cor-teto: rgb(0, 0, 0);
+    --cor-vidro: #F13B3B;
+    --cor-fundo: rgb(97, 96, 96);
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cor-fundo);
+}
+
+.secaoCarro {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.btnDrop {
+    position: absolute;
+    top: 20px;
+    left: 75px;
+    display: flex;
+    padding: 5px 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(45, 44, 44);
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-shadow: 0 0 2px black;
+    animation: colorsFont 2s infinite alternate linear;
+}
+
+.btnDrop::before {
+    content: "";
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    width: 77px;
+    height: 34px;
+    padding: 2px;
+    background: linear-gradient(30deg, red 50%, yellow 20%);
+    background-repeat: no-repeat;
+    background-size: 300%;
+    border-radius: 5px;
+    z-index: -1;
+    animation: colors 2s infinite linear alternate ;
+    filter: blur(2px);
+}
+
+@keyframes colorsFont {
+    0%{color: red;}
+    100%{color: yellow;}
+}
+
+@keyframes colors {
+    0%{background-position: 0;}
+    100%{background-position: 100%;}
+}
+
+.btnDrop:active {
+    background-color: rgb(117, 116, 116);
+    transform: scale(0.9);
+}
+
+.btnsOn {
+    padding: 5px 10px;
+    background-color: rgb(162, 249, 95);
+    transition: .1s;
+    border: none;
+    border-radius: 7px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.giroflexOn {
+    position: absolute;
+    top: 50px;
+    left: 550px;
+}
+
+.btnsOn:active {
+    background-color: rgb(138, 246, 55);
+    transform: scale(0.9);
+    color: rgb(60, 59, 59);
+}
+
+.btnsOff {
+    padding: 5px 10px;
+    background-color: rgb(230, 65, 65);
+    transition: .1s;
+    border: none;
+    border-radius: 7px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.giroflexOff {
+    position: absolute;
+    top: 50px;
+    left: 700px;
+}
+
+.btnsOff:active {
+    background-color: rgb(244, 25, 25);
+    transform: scale(0.9);
+    color: rgb(60, 59, 59);
+}
+
+.box {
+    position: absolute;
+}
+
+.box1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.giroflex {
+    width: 250px;
+    height: 20px;
+    position: absolute;
+    top: -93px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.boxGiroflex {
+    width: 100%;
+    height: 10px;
+    display: flex;
+    border: 2px solid rgb(91, 91, 91);
+    background-color: rgb(203, 203, 203);
+    border-radius: 50px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.giroflexLed {
+    width: 8px;
+    height: 4px;
+    background-color: rgb(103, 103, 103);
+    border-radius: 0 10px 0px 10px;
+    transform: rotate(-20deg);
+}
+
+.led1 {
+    animation: led1 .5s infinite alternate-reverse linear;
+}
+
+@keyframes led1 {
+    0%{background-color: white;box-shadow: 0 0 20px 20px white;}
+    25%{background-color: red;box-shadow: 0 0 20px 20px red;}
+    50%{background-color: blue;box-shadow: 0 0 20px 20px blue;}
+    75%{background-color: red;box-shadow: 0 0 20px 20px red;}
+    100%{background-color: white;box-shadow: 0 0 20px 20px white;}
+}
+
+.led2 {
+    animation: led2 .5s infinite alternate-reverse linear;
+}
+
+@keyframes led2 {
+    0%{background-color: blue;box-shadow: 0 0 20px 20px blue;}
+    25%{background-color: white;box-shadow: 0 0 20px 20px white;}
+    50%{background-color: red;box-shadow: 0 0 20px 20px red;}
+    75%{background-color: white;box-shadow: 0 0 20px 20px white;}
+    100%{background-color: red;box-shadow: 0 0 20px 20px red;}
+}
+
+.suporteTetoGiroflex {
+    width: 80%;
+    height: 7px;
+    background-color: var(--cor-teto);
+}
+
+.teto1 {
+    border-top: 5px solid transparent;
+    border-left: 100px solid transparent;
+    border-right: 150px solid var(--cor-teto);
+    border-bottom: 80px solid var(--cor-teto);
+    position: relative;
+}
+
+.vidro1 {
+    border-top: 5px solid transparent;
+    border-left: 90px solid transparent;
+    border-right: 140px solid var(--cor-vidro);
+    border-bottom: 70px solid var(--cor-vidro);
+    position: absolute;
+    right: -150px;
+    margin-top: 5px;
+}
+
+.teto2 {
+    border-top: 5px solid transparent;
+    border-left: 150px solid var(--cor-teto);
+    border-right: 100px solid transparent;
+    border-bottom: 80px solid var(--cor-teto);
+    display: flex;
+    position: relative;
+}
+
+.vidro2 {
+    border-top: 5px solid transparent;
+    border-left: 140px solid var(--cor-vidro);
+    border-right: 90px solid transparent;
+    border-bottom: 70px solid var(--cor-vidro);
+    position: absolute;
+    right: -80px;
+    margin-top: 5px;
+}
+
+.box2 {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carro {
+    width: 550px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.capo1 {
+    width: 100%;
+    height: 80px;
+    background-color: var(--cor-teto);
+    border-radius: 20px 20px 0 0;
+    position: relative;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.ledRetrovisor1 {
+    width: 10px;
+    height: 10px;
+    background-color: orangered;
+    border-radius: 0 0 0 7px;
+    margin-left: 5px;
+}
+
+.ledOn {
+    position: absolute;
+    top: 225px;
+    left: 75px;
+
+}
+
+.ledOff {
+
+    position: absolute;
+    top: 270px;
+    left: 75px;
+}
+
+.colunaRetrovisor1 {
+    width: 12px;
+    height: 40px;
+    background: var(--cor-teto);
+    border-radius: 20px 20px 0 0;
+    position: absolute;
+    top: -20px;
+    left: -0px;
+    transform: rotate(-40deg);
+}
+
+.retrovisor1 {
+    width: 55px;
+    height: 17px;
+    background-color: var(--cor-teto);
+    border-radius: 0px 100px 0px 100px;
+    position:absolute;
+    top: -20px;
+    left: -49px;
+    display: flex;
+    align-items: center;
+}
+
+.ledRetrovisores {
+    animation: ledRetrovisor .5s infinite alternate-reverse linear;
+}
+
+@keyframes ledRetrovisor {
+    0%{background-color: white; box-shadow: 0 0 50px 50px white;}
+    10%{background-color: transparent; box-shadow: 0 0 20px 20px transparent;}
+    15%{background-color: white; box-shadow: 0 0 50px 50px white;}
+    20%{background-color: transparent; box-shadow: 0 0 20px 20px transparent;}
+    25%{background-color: white; box-shadow: 0 0 50px 50px white;}
+    30%{background-color: transparent; box-shadow: 0 0 20px 20px transparent;}
+    35%{background-color: white; box-shadow: 0 0 50px 50px white;}
+    40%{background-color: transparent; box-shadow: 0 0 20px 20px transparent;}
+    45%{background-color: white; box-shadow: 0 0 50px 50px white;}
+    50%{background-color: transparent; box-shadow: 0 0 20px 20px transparent;}
+    60%{background-color: white; box-shadow: 0 0 50px 50px white;}
+    65%{ box-shadow: 0 0 20px 20px transparent;}
+    80%{ box-shadow: 0 0 20px 20px transparent;}
+    85%{ box-shadow: 0 0 20px 20px transparent;}
+    90%{ box-shadow: 0 0 20px 20px transparent;}
+    95%{ box-shadow: 0 0 20px 20px transparent;}
+    100%{ box-shadow: 0 0 20px 20px transparent;}
+}
+
+.retrovisor2 {
+    width: 55px;
+    height: 17px;
+    background-color: var(--cor-teto);
+    border-radius: 100px 0px 100px 0px;
+    position:absolute;
+    top: -20px;
+    right: -49px;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.ledRetrovisor2 {
+    width: 10px;
+    height: 10px;
+    background-color: orangered;
+    border-radius: 0 0 7px 0;
+    margin-right: 5px;
+}
+
+.luzLedRetrovisor1 {
+    position: absolute;
+    left: -200px;
+    top: 90px;
+    width: 250px;
+    height: 100px;
+    z-index: -1;
+    border-radius: 50%;
+    transform: perspective(64px) scale(1 0.35);
+    filter: blur(20px);
+}
+
+.colunaRetrovisor2 {
+    width: 12px;
+    height: 40px;
+    background: var(--cor-teto);
+    border-radius: 20px 20px 0 0;
+    position: absolute;
+    top: -20px;
+    right: -0px;
+    transform: rotate(40deg);
+}
+
+
+.luzLedRetrovisor2 {
+    position: absolute;
+    right: -200px;
+    top: 90px;
+    width: 250px;
+    height: 100px;
+    z-index: -1;
+    border-radius: 50%;
+    transform: perspective(64px) scale(1 0.35);
+    filter: blur(20px);
+}
+
+.reflexo {
+    animation: luzLedRetrovisor .5s infinite alternate-reverse linear;
+}
+
+@keyframes luzLedRetrovisor {
+        0%{background-color: rgba(203, 203, 203, 0.633); box-shadow: 0 0 10px 10px rgba(203, 203, 203, 0.633);}
+        10%{background-color: transparent; box-shadow: 0 0 20px 20px transparent;}
+        15%{background-color: rgba(203, 203, 203, 0.633); box-shadow: 0 0 10px 10px rgba(203, 203, 203, 0.633);}
+        20%{background-color: transparent; box-shadow: 0 0 20px 20px transparent;}
+        25%{background-color: rgba(203, 203, 203, 0.633); box-shadow: 0 0 10px 10px rgba(203, 203, 203, 0.633);}
+        30%{background-color: transparent; box-shadow: 0 0 20px 20px transparent;}
+        35%{background-color: rgba(203, 203, 203, 0.633); box-shadow: 0 0 10px 10px rgba(203, 203, 203, 0.633);}
+        40%{background-color: transparent; box-shadow: 0 0 20px 20px transparent;}
+        45%{background-color: rgba(203, 203, 203, 0.633); box-shadow: 0 0 10px 10px rgba(203, 203, 203, 0.633);}
+        50%{background-color: transparent; box-shadow: 0 0 20px 20px transparent;}
+        60%{background-color: rgba(203, 203, 203, 0.633); box-shadow: 0 0 10px 10px rgba(203, 203, 203, 0.633);}
+        65%{ box-shadow: 0 0 20px 20px transparent;}
+        80%{ box-shadow: 0 0 20px 20px transparent;}
+        85%{ box-shadow: 0 0 20px 20px transparent;}
+        90%{ box-shadow: 0 0 20px 20px transparent;}
+        95%{ box-shadow: 0 0 20px 20px transparent;}
+        100%{ box-shadow: 0 0 20px 20px transparent;}
+}
+
+.boxCapo {
+    width: 100%;
+    height: 59px;
+    background-color: var(--cor-teto);
+    border-radius: 0 0 30px 30px;
+}
+
+.capoBico {
+    width: 90%;
+    height: 10px;
+    background-color: rgb(36, 36, 36);
+    border-radius: 0 0 100px 100px;
+    border-bottom: 2px solid red;
+}
+
+.ledsFarolOn{
+    position: absolute;
+    top: 225px;
+    right: 75px;
+}
+
+.ledsFarolOff {
+    position: absolute;
+    top: 270px;
+    right: 75px;
+}
+
+.farol {
+    width: 100px;
+    height: 15px;
+    background-color: rgb(203, 203, 203);
+    border-radius: 0px 100px 0px 100px;
+    position: absolute;
+    top: 80px;
+    left: 20px;
+    transform: rotate(25deg);
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.luz1 {
+    position: absolute;
+    left: -5%;
+    top: 83%;
+    width: 170px;
+    height: 120px;
+    transform: perspective(64px) rotateX(45deg) rotateY(6deg) scale(1);
+    filter: blur(20px);
+}
+
+.luz2 {
+    position: absolute;
+    right: -5%;
+    top: 83%;
+    width: 180px;
+    height: 120px;
+    transform: perspective(64px) rotateX(45deg) rotateY(-6deg) scale(1);
+    filter: blur(20px);
+}
+
+.luzAlta {
+    background-color: rgb(255, 255, 255);
+}
+
+.luzBaixa {
+    background-color: rgb(203, 203, 203);
+}
+
+.LuzCireneOn {
+    animation: LuzCireneOn .5s infinite;
+}
+
+@keyframes LuzCireneOn {
+    0%{background-color: rgb(203, 203, 203);box-shadow: 0 0 30px 30px rgb(203, 203, 203);}
+    25%{background-color: rgba(255, 0, 0, 0.429);box-shadow: 0 0 30px 30px rgba(255, 0, 0, 0.429);}
+    50%{background-color: rgba(0, 0, 255, 0.432);box-shadow: 0 0 30px 30px rgba(0, 0, 255, 0.432);}
+    75%{background-color: rgba(255, 0, 0, 0.429);box-shadow: 0 0 30px 30px rgba(255, 0, 0, 0.429);}
+    100%{background-color: rgb(203, 203, 203);box-shadow: 0 0 30px 30px rgb(203, 203, 203);}
+}
+
+.lentD1 {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(103, 103, 103);
+    border-radius: 5px 150px 50px 150px;
+    transform: rotate(-30deg);
+    margin-right: 17px;
+}
+
+.lentD2 {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(103, 103, 103);
+    border-radius: 5px 150px 50px 150px;
+    transform: rotate(-30deg);
+    margin-right: 17px;
+}
+
+.lentD3 {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(103, 103, 103);
+    border-radius: 5px 150px 50px 150px;
+    transform: rotate(-30deg);
+    margin-right: 17px;
+}
+
+.farol2 {
+    width: 100px;
+    height: 15px;
+    background-color: rgb(203, 203, 203);
+    border-radius: 100px 0px 100px 0px;
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    transform: rotate(-25deg);
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.lentE1 {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(103, 103, 103);
+    border-radius: 150px 5px 150px 50px;
+    transform: rotate(30deg);
+    margin-right: 17px;
+}
+
+.lentE2 {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(103, 103, 103);
+    border-radius: 150px 5px 150px 50px;
+    transform: rotate(30deg);
+    margin-right: 17px;
+}
+
+.lentE3 {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(103, 103, 103);
+    border-radius: 150px 5px 150px 50px;
+    transform: rotate(30deg);
+    margin-right: 17px;
+}
+
+.ligaAll {
+    position: absolute;
+    top: 350px;
+    left: 75px;
+}
+
+.desligaAll {
+    position: absolute;
+    top: 390px;
+    left: 75px;
+}
+
+.farolAlto {
+    position: absolute;
+    top: 440px;
+    right: 200px;
+}
+
+.farolBaixo {
+    position: absolute;
+    top: 440px;
+    right: 75px;
+}
+
+
+.addFarolAlto {
+    background-color: white;box-shadow: 0 0 100px 100px white;
+}
+.addFarolBaixo {
+    background-color: white;box-shadow: 0 0 20px 20px rgb(203, 203, 203);
+}
+
+.farolLigado{
+    position: absolute;
+    top: 400px;
+    right: 75px;
+}
+
+.farolDesligado{
+    position: absolute;
+    top: 480px;
+    right: 75px;
+}
+
+.lenteFarol {
+    animation: lente .5s infinite;
+}
+
+@keyframes lente {
+    0%{background-color: white;box-shadow: 0 0 30px 30px white;}
+    25%{background-color: red;box-shadow: 0 0 30px 30px red;}
+    50%{background-color: blue;box-shadow: 0 0 30px 30px blue;}
+    75%{background-color: red;box-shadow: 0 0 30px 30px red;}
+    100%{background-color: white;box-shadow: 0 0 30px 30px white;}
+}
+
+.sinalizador1 {
+    width: 15px;
+    height: 5px;
+    background-color: orangered;
+    position: absolute;
+    top: 120px;
+    right: 160px;
+    border-radius: 50px;
+}
+
+.sinalizador2 {
+    width: 15px;
+    height: 5px;
+    background-color: orangered;
+    position: absolute;
+    top: 120px;
+    left: 160px;
+    border-radius: 50px;
+}
+
+.sinalizador3 {
+    position: absolute;
+    top: 155px;
+    left: 120px;
+    width: 100px;
+    height: 50px;
+    transform: perspective(64px) rotateX(45deg) scale(1);
+    filter: blur(20px);
+}
+
+.sinalizador4 {
+    position: absolute;
+    top: 155px;
+    right: 120px;
+    width: 100px;
+    height: 50px;
+    transform: perspective(64px) rotateX(45deg) scale(1);
+    filter: blur(20px);
+}
+
+.aerofolio {
+    margin-top: 30px;
+    width: 550px;
+    height: 25px;
+    background: var(--cor-teto);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 2px 2px 10px 10px;
+    border-left: 2px solid red;
+    border-bottom: 2px solid red;
+}
+
+.aerofolio1 {
+    width: 98%;
+    height: 5px;
+    background: var(--cor-fundo);
+    margin-bottom: 7.5px;
+    border-radius: 0 0 50px 50px;
+    border-bottom: 2px solid red;
+}
+
+.aerofolio2 {
+    width: 98%;
+    height: 2px;
+    background: var(--cor-fundo);
+}
+
+.aerofolio3 {
+    width: 100%;
+    height: 10.5px;
+    background: var(--cor-teto);
+    border-radius: 0 0 10px 10px;
+}
+
+.pnel {
+    margin-top: 90px;
+    width: 550px;
+    height: 90px;
+    display: flex;
+}
+
+.pnel1 {
+    width: 50%;
+    height: 100%;
+}
+
+.pnel2 {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.roda {
+    width: 100px;
+    height: 100%;
+    background-color: rgb(46, 46, 46);
+    border-radius: 0 0 15px 15px;
+}
